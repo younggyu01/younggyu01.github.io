@@ -469,6 +469,7 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
   .hero-band{min-height:clamp(96px,16vh,250px)}
   .bar-links{gap:4px;margin-right:-8px}
   .bar-links a{padding:13px 8px}
+  .bar-links .r-pdf{display:none}
   .ix-meta{flex-direction:column;gap:0}
   #st-ex{height:clamp(660px,94vh,800px);height:clamp(660px,94svh,800px)}
   .ex-wrap{grid-template-rows:minmax(0,.72fr) minmax(0,1.28fr)}
@@ -480,6 +481,9 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
 }
 @media (max-width:420px){
   .seg.lg button{padding:14px 18px}
+}
+@media (max-width:400px){
+  .bar-links.has-resume a[href="#record"]{display:none}
 }
 @media (max-width:360px){
   .idfacts{grid-template-columns:1fr}
@@ -593,7 +597,7 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
       <span class="ix-name">CtrlF</span>
       <span class="ix-desc dual"><span class="p">사내 규정을 AI 챗봇이 찾아 답하고, 교육 자료를 영상으로 만들어 주는 사내 교육 서비스</span><span class="t">AI 챗봇, 교육 영상 제작, 퀴즈를 묶은 사내 교육 서비스의 React 프론트엔드</span></span>
       <span class="ix-meta"><span class="ix-role">프론트엔드 개발</span><span class="ix-result">최종 팀 프로젝트 대상</span></span>
-      <span class="ix-when">2026.01</span>
+      <span class="ix-when">2025.11 – 2026.01</span>
     </a></li>
     <li><a href="#hanil">
       <span class="ix-name">리크 검사 대시보드</span>
@@ -624,7 +628,7 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
     <p class="t">AI 챗봇과 교육 영상 제작, 퀴즈를 묶은 사내 교육·컴플라이언스 서비스의 프론트엔드를 맡았습니다.</p>
   </div>
   <dl class="facts">
-    <div><dt>시기</dt><dd>2026.01</dd></div>
+    <div><dt>시기</dt><dd>2025.11 – 2026.01</dd></div>
     <div><dt>팀</dt><dd>8명</dd></div>
     <div><dt>담당</dt><dd>프론트엔드 개발</dd></div>
     <div><dt>배경</dt><dd>SK쉴더스 루키즈 4기 최종 팀 프로젝트</dd></div>
@@ -1194,7 +1198,7 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
    RESUME에 이력서 PDF의 경로나 주소를 넣으면 상단과 연락 칸에 이력서 버튼이 생긴다.
    ========================================================================== */
 var SHOW_EMPTY_SLOTS=true;
-var RESUME='';
+var RESUME='./assets/guk-younggyu-resume.pdf';
 var MEDIA={
   ctrlf:{
     shots:[{label:'AI 챗봇',src:'./assets/ctrlf-chatbot.jpg',w:1088,h:631},{label:'교육 콘텐츠 제작',src:'./assets/ctrlf-creator.jpg',w:1084,h:611},{label:'역할별 메뉴',src:''}],
@@ -2703,8 +2707,8 @@ scenes.ex=(function(){
   /* 이력서: 주소가 있을 때만 버튼이 생긴다 */
   if(RESUME){
     var nav=$('.bar-links'),act=$('#c-actions');
-    if(nav){var a=document.createElement('a');a.href=RESUME;a.target='_blank';a.rel='noopener';a.textContent='이력서';nav.insertBefore(a,nav.firstChild);}
-    if(act){var b=document.createElement('a');b.className='btn';b.href=RESUME;b.target='_blank';b.rel='noopener';b.textContent='이력서 열기';act.appendChild(b);}
+    if(nav){var a=document.createElement('a');a.href=RESUME;a.target='_blank';a.rel='noopener';a.type='application/pdf';a.textContent='이력서';var k=document.createElement('span');k.className='r-pdf';k.textContent=' PDF';a.appendChild(k);nav.appendChild(a);nav.classList.add('has-resume');}
+    if(act){var b=document.createElement('a');b.className='btn';b.href=RESUME;b.target='_blank';b.rel='noopener';b.type='application/pdf';b.textContent='이력서 열기';act.appendChild(b);}
   }
 })();
 
