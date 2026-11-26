@@ -699,7 +699,7 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
     <div><dt>담당</dt><dd class="dual"><span class="p">데이터 저장과 처리</span><span class="t">저장 계층</span></dd></div>
     <div><dt>배경</dt><dd>한일전기 세종공장 × 홍익대학교 Pre-인턴십</dd></div>
     <div><dt>기술</dt><dd>Python, PySide6, SQLite</dd></div>
-    <div><dt>결과</dt><dd class="dual"><span class="p">검사 파일 2,909개를 빠짐없이 처리, 세종공장에 배포</span><span class="t">대상 라인 XLS 2,909개 전수 적재, 세종공장에 배포</span></dd></div>
+    <div><dt>결과</dt><dd class="dual"><span class="p">검사 파일 2,909개를 모두 읽어 대조, 세종공장에 배포</span><span class="t">대상 라인 XLS 2,909개 결과 대조 불일치 0건, 세종공장에 배포</span></dd></div>
   </dl>
 
   <div class="stage-wrap">
@@ -750,8 +750,8 @@ html:not(.js) .link-status,html:not(.js) .hero-lens,html:not(.js) .plug-btn,html
     <li class="step">
       <h3><button type="button" class="step-h">믿을 수 있게 된 것</button></h3>
       <div class="dual">
-        <p class="p">화면에 보이는 숫자가 어느 파일에서 왔는지 원본까지 거슬러 확인할 수 있습니다. 최종 검증에서는 한 라인에 쌓여 있던 검사 파일 2,909개를 빠짐없이 불러왔습니다. 프로그램은 한일전기 세종공장에 배포됐습니다.</p>
-        <p class="t">표준화한 값과 원본 행을 함께 보존해 집계 결과를 원본까지 추적할 수 있습니다. 최종 검증에서 대상 라인의 일일보고서 XLS 2,909개를 전수 적재했습니다. 한일전기 세종공장에 배포됐습니다.</p>
+        <p class="p">화면에 보이는 숫자가 어느 파일에서 왔는지 원본까지 거슬러 확인할 수 있습니다. 최종 검증에서는 한 라인에 쌓여 있던 검사 파일 2,909개를 기존 방식과 새 방식으로 각각 읽어, 모든 파일에서 결과가 같은지 대조했습니다. 프로그램은 한일전기 세종공장에 배포됐습니다.</p>
+        <p class="t">표준화한 값과 원본 행을 함께 보존해 집계 결과를 원본까지 추적할 수 있습니다. 최종 검증에서 대상 라인의 일일보고서 XLS 2,909개를 기존·신규 파서로 각각 읽어 대조했고 불일치는 0건이었습니다. SQLite 저장은 실제 파일 100개로 세 번 반복해 매회 17,430행이 들어가는 것을 확인했습니다. 한일전기 세종공장에 배포됐습니다.</p>
       </div>
     </li>
   </ol>
